@@ -97,8 +97,8 @@ DuplicateCheckBtn.addEventListener("click", ()=>{
     let y = x.split(",");
 
     for (let i = 0; i < y.length; i++) {
-        if (i < y.length) {  // Prevents accessing beyond the length of y
-            duplicateArr.push(Number(y[i].trim())); // Convert each element to number and add to the array
+        if (i < y.length) {  
+            duplicateArr.push(Number(y[i].trim())); 
         }
     }
 
