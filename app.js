@@ -2,7 +2,6 @@
 
 
 const button=  document.querySelector('#convertBtn');
-
 const miterinput = document.querySelector('#meterInput');
 
 function meterToFit (mvalue){
@@ -35,4 +34,144 @@ if(event.key=== 'Enter'){
 }
  
 });
+
+
+
+
+// Leap Year Count 
+
+ const LeapYearconvertBtn = document.querySelector("#LeapYearconvertBtn");
+ let  leapYearInput = document.querySelector("#leapYearInput").value;
+
+ function isLeapYear (yearValue){
+
+    if(yearValue % 100 !==0 && yearValue % 4 ===0 ){
+        const isleap1 = yearValue + " is Leap Year";
+        document.querySelector("#LeapOutput").innerHTML = isleap1;
+    }
+    else if (yearValue % 100 ===0 && yearValue % 400 ===0 ){
+        const isleap2 = yearValue + " is Leap Year";
+        document.querySelector("#LeapOutput").innerHTML = isleap2;
+    }
+
+    else{
+
+        document.querySelector("#LeapOutput").innerHTML = yearValue + " is not Leap Year";
+    }
+ }
+
+
+ LeapYearconvertBtn.addEventListener("click", ()=>{
+    let  leapYearInput1 = document.querySelector("#leapYearInput").value;
+    isLeapYear(leapYearInput1);
+ });
+ 
+
+
+
+
+
+//   Duplicate Checker
+
+const DuplicateInput = document.querySelector("#DuplicateInput").value.trim();
+
+
+
+const DuplicateCheckBtn = document.querySelector("#DuplicateCheckBtn");
+
+function DuplicateChker (userValue){
+    const unique = [];
+    for(let num  of userValue){
+        if(unique.includes(num)===false){
+            unique.push(num);
+        }
+    }
+    document.querySelector("#NotDuplicateOutput").innerHTML = unique +" is unique number";
+
+}
+
+DuplicateCheckBtn.addEventListener("click", ()=>{
+
+    const duplicateArr = [];
+    let x =  document.querySelector("#DuplicateInput").value;
+    let y = x.split(",");
+
+    for (let i = 0; i < y.length; i++) {
+        if (i < y.length) {  // Prevents accessing beyond the length of y
+            duplicateArr.push(Number(y[i].trim())); // Convert each element to number and add to the array
+        }
+    }
+
+     DuplicateChker(duplicateArr);
+    
+
+})
+
+
+
+// Fahrenheit to Celsius Converter
+
+const fahrenheitToCelsiusBtn = document.querySelector("#fahrenheitToCelsiusBtn");
+
+function fahrenheitToCelsius (fvalue){
+
+    if(fvalue>0){
+        const Celsius = (fvalue-32)/1.8;
+    
+        const cel = Celsius.toFixed(2);
+        document.querySelector("#celciusOutput").innerHTML = cel +" Degre Celsius";
+    }
+    else {
+        document.querySelector("#celciusOutput").innerHTML ="Enter a valid number";
+    }
+    
+
+    // return cel;
+
+}
+
+fahrenheitToCelsiusBtn.addEventListener("click", ()=>{
+    let Fahrenheit = document.querySelector("#Fahrenheit").value;
+    fahrenheitToCelsius(Fahrenheit);
+
+})
+
+ const FahrenheitEnter = document.querySelector("#Fahrenheit");
+
+ FahrenheitEnter.addEventListener("keypress", ()=>{
+    if(event.key==="Enter"){
+        let Fahrenheit = document.querySelector("#Fahrenheit").value;
+    fahrenheitToCelsius(Fahrenheit);
+    }
+ })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

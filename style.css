@@ -7,10 +7,13 @@
 
 body {
     background-color: #f3f4f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
     height: 100vh;
+    gap: 50px;
+    margin: 0 auto;
+    width: 95%;
+
 }
 
 .container {
@@ -19,6 +22,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    width: 280px;
 }
 
 h1 {
@@ -72,4 +77,15 @@ p {
 
 #feetOutput {
     color: #007bff;
+}
+
+.result-area{
+    overflow: scroll;
+}
+
+@media  screen and (max-width:600px) {
+    body {
+        grid-template-columns: repeat(1,1fr);
+    
+    }
 }
